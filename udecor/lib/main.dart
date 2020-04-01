@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:udecor/services/dialog_service.dart';
 import 'package:udecor/services/navigation_service.dart';
+import 'package:udecor/ui/views/login_view.dart';
 import 'package:udecor/ui/views/signup_view.dart';
 import 'managers/dialog_manager.dart';
 import 'ui/router.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
               fontFamily: 'Open Sans',
             ),
       ),
-      home: SignUpView(),
+      home: LoginView(),
       onGenerateRoute: generateRoute,
     );
   }

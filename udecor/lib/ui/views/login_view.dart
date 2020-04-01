@@ -1,4 +1,6 @@
+import 'package:udecor/constants/route_names.dart';
 import 'package:udecor/ui/shared/ui_helpers.dart';
+import 'package:udecor/ui/views/signup_view.dart';
 import 'package:udecor/ui/widgets/busy_button.dart';
 import 'package:udecor/ui/widgets/input_field.dart';
 import 'package:udecor/ui/widgets/text_link.dart';
@@ -24,7 +26,7 @@ class LoginView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 SizedBox(
-                  height: 150,
+                  height: 100,
                   child: Image.asset('assets/images/title.png'),
                 ),
                 InputField(
@@ -55,11 +57,14 @@ class LoginView extends StatelessWidget {
                   ],
                 ),
                 verticalSpaceMedium,
-                TextLink(
-                  'Create an Account if you\'re new.',
-                  onPressed: () {
-                    // TODO: Handle navigation
-                  },
+                BusyButton(
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => SignUpView(),
+                    ),
+                  ),
+                  title: 'Create an Account if you\'re new.',
                 )
               ],
             ),

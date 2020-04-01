@@ -1,32 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:udecor/services/dialog_service.dart';
+import 'package:udecor/services/navigation_service.dart';
+import 'package:udecor/ui/views/signup_view.dart';
+import 'managers/dialog_manager.dart';
+import 'ui/router.dart';
+import 'locator.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  // Register all the models and services before the app starts
+  setupLocator();
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MyApp',
-      home: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: CircleAvatar(
-              backgroundImage: AssetImage('images/greg.jpg'),
-            ),
-          ),
-          backgroundColor: Colors.blueGrey,
-        ),
-        body: Container(
-          child: Center(
-            child: Text(
-              'Hello world',
-              textDirection: TextDirection.ltr,
-            ),
-          ),
-        ),
+      title: 'Compound',
+      builder: (context, child) => Navigator(
+        key: locator<DialogService>().dialogNavigationKey,
+        onGenerateRoute: (settings) => MaterialPageRoute(
+            builder: (context) => DialogManager(child: child)),
       ),
+      navigatorKey: locator<NavigationService>().navigationKey,
+      theme: ThemeData(
+        primaryColor: Color.fromARGB(255, 9, 202, 172),
+        backgroundColor: Color.fromARGB(255, 26, 27, 30),
+        textTheme: Theme.of(context).textTheme.apply(
+              fontFamily: 'Open Sans',
+            ),
+      ),
+      home: SignUpView(),
+      onGenerateRoute: generateRoute,
     );
   }
 }

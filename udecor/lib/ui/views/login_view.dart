@@ -1,12 +1,11 @@
+import 'package:provider_architecture/provider_architecture.dart';
 import 'package:udecor/constants/route_names.dart';
 import 'package:udecor/locator.dart';
 import 'package:udecor/services/navigation_service.dart';
-import 'package:udecor/ui/router.dart';
 import 'package:udecor/ui/shared/ui_helpers.dart';
 import 'package:udecor/ui/widgets/busy_button.dart';
 import 'package:udecor/ui/widgets/input_field.dart';
 import 'package:flutter/material.dart';
-import 'package:provider_architecture/provider_architecture.dart';
 import 'package:udecor/viewmodels/login_view_model.dart';
 
 class LoginView extends StatelessWidget {

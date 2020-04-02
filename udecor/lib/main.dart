@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:udecor/services/dialog_service.dart';
 import 'package:udecor/services/navigation_service.dart';
 import 'package:udecor/ui/views/login_view.dart';
-import 'package:udecor/ui/views/signup_view.dart';
 import 'managers/dialog_manager.dart';
 import 'ui/router.dart';
 import 'locator.dart';
 
 void main() {
-  // Register all the models and services before the app starts
   setupLocator();
-
   runApp(MyApp());
 }
 
@@ -18,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Compound',
+      title: 'Arbiter',
       builder: (context, child) => Navigator(
         key: locator<DialogService>().dialogNavigationKey,
         onGenerateRoute: (settings) => MaterialPageRoute(

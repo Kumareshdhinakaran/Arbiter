@@ -1,9 +1,10 @@
 import 'package:udecor/constants/route_names.dart';
+import 'package:udecor/locator.dart';
+import 'package:udecor/services/navigation_service.dart';
+import 'package:udecor/ui/router.dart';
 import 'package:udecor/ui/shared/ui_helpers.dart';
-import 'package:udecor/ui/views/signup_view.dart';
 import 'package:udecor/ui/widgets/busy_button.dart';
 import 'package:udecor/ui/widgets/input_field.dart';
-import 'package:udecor/ui/widgets/text_link.dart';
 import 'package:flutter/material.dart';
 import 'package:provider_architecture/provider_architecture.dart';
 import 'package:udecor/viewmodels/login_view_model.dart';
@@ -11,6 +12,7 @@ import 'package:udecor/viewmodels/login_view_model.dart';
 class LoginView extends StatelessWidget {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final NavigationService _navigationService = locator<NavigationService>();
 
   @override
   Widget build(BuildContext context) {
@@ -58,12 +60,8 @@ class LoginView extends StatelessWidget {
                 ),
                 verticalSpaceMedium,
                 BusyButton(
-                  onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => SignUpView(),
-                    ),
-                  ),
+                  onPressed: () =>
+                      _navigationService.navigateTo(SignUpViewRoute),
                   title: 'Create an Account if you\'re new.',
                 )
               ],

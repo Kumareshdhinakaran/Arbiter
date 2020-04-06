@@ -19,51 +19,56 @@ class LoginView extends StatelessWidget {
       viewModel: LoginViewModel(),
       builder: (context, model, child) => Scaffold(
           backgroundColor: Colors.white,
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(
-                  height: 100,
-                  child: Image.asset('assets/images/title.png'),
-                ),
-                InputField(
-                  placeholder: 'Email',
-                  controller: emailController,
-                ),
-                verticalSpaceSmall,
-                InputField(
-                  placeholder: 'Password',
-                  password: true,
-                  controller: passwordController,
-                ),
-                verticalSpaceMedium,
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    BusyButton(
-                      title: 'Login',
-                      busy: model.busy,
-                      onPressed: () {
-                        model.login(
-                          email: emailController.text,
-                          password: passwordController.text,
-                        );
-                      },
-                    )
-                  ],
-                ),
-                verticalSpaceMedium,
-                BusyButton(
-                  onPressed: () =>
-                      _navigationService.navigateTo(SignUpViewRoute),
-                  title: 'Create an Account if you\'re new.',
-                )
-              ],
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 50),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Divider(
+                    height: 80,
+                  ),
+                  SizedBox(
+                    height: 100,
+                    child: Image.asset('assets/images/title.png'),
+                  ),
+                  InputField(
+                    placeholder: 'Email',
+                    controller: emailController,
+                  ),
+                  verticalSpaceSmall,
+                  InputField(
+                    placeholder: 'Password',
+                    password: true,
+                    controller: passwordController,
+                  ),
+                  verticalSpaceMedium,
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      BusyButton(
+                        title: 'Login',
+                        busy: model.busy,
+                        onPressed: () {
+                          model.login(
+                            email: emailController.text,
+                            password: passwordController.text,
+                          );
+                        },
+                      )
+                    ],
+                  ),
+                  verticalSpaceMedium,
+                  BusyButton(
+                    onPressed: () =>
+                        _navigationService.navigateTo(SignUpViewRoute),
+                    title: 'Create an Account if you\'re new.',
+                  )
+                ],
+              ),
             ),
           )),
     );

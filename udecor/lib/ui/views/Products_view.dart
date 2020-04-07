@@ -15,6 +15,7 @@ class _ProductsViewState extends State<ProductsView> {
   num _value = 0;
   int _availab;
   int _noOfItems = 0;
+  num _val;
   final List<Map<String, Object>> _products = [
     {
       'sNo': 1,
@@ -52,8 +53,9 @@ class _ProductsViewState extends State<ProductsView> {
     return _value;
   }
 
-  void _cartValue(num val, int avail) {
+  void _cartValue(num val, int avail, int s_no) {
     setState(() {
+      _val = s_no;
       _value += val;
       _noOfItems += 1;
       _availab = avail;
@@ -65,6 +67,7 @@ class _ProductsViewState extends State<ProductsView> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: buildAppBar(),
         drawer: DrawerWidget(),
         body: Padding(
@@ -141,7 +144,10 @@ class _ProductsViewState extends State<ProductsView> {
                     ],
                   ),
                   ...(_products).map((product) {
-                    if (_availab != null) product['availability'] = _availab;
+                    int product2 = product['availablity'];
+                    int sno = product['sNo'];
+                    if (_availab == product2 - 1 && _val == sno)
+                      product['availablity'] = _availab;
                     return (buildTableRow(product['sNo'], product['name'],
                         product['availablity'], product['cost']));
                   }).toList(),
@@ -203,7 +209,7 @@ class _ProductsViewState extends State<ProductsView> {
           padding: const EdgeInsets.all(3.0),
           child: FlatButton(
             onPressed: () {
-              _cartValue(cost, available);
+              _cartValue(cost, available, sNo);
             },
             child: Text('Add'),
             color: Colors.blue[400],

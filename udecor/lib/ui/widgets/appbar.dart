@@ -4,10 +4,8 @@ import 'package:udecor/locator.dart';
 import 'package:udecor/services/navigation_service.dart';
 
 AppBar buildAppBar() {
-  final NavigationService _navigationService = locator<NavigationService>();
-
   return AppBar(
-    backgroundColor: Colors.grey[50],
+    backgroundColor: Colors.blueGrey[100],
     title: Text(
       "Arbiter",
       style: TextStyle(
@@ -25,12 +23,5 @@ AppBar buildAppBar() {
         );
       },
     ),
-    actions: <Widget>[
-      IconButton(
-        icon: Icon(Icons.person),
-        color: Colors.black45,
-        onPressed: () => _navigationService.navigateTo(ProfilePageRoute),
-      ),
-    ],
   );
 }

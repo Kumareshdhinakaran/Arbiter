@@ -49,8 +49,14 @@ class SellerDetails extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           child: Container(
             height: 80,
-            color: Colors.grey[200],
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.blueGrey[200],
+              ),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
             child: FlatButton(
+              focusColor: Colors.lime,
               child: Row(
                 children: <Widget>[
                   IconButton(

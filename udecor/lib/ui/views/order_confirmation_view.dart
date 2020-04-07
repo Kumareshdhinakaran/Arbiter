@@ -15,13 +15,24 @@ class OrderConfirmationView extends StatelessWidget {
       appBar: buildAppBar(),
       drawer: DrawerWidget(),
       body: Center(
-        child: Text(
-          'Your order placed successfully',
-          style: TextStyle(
-            fontSize: 15.0,
-            fontWeight: FontWeight.w700,
-            color: Colors.grey,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Your order placed successfully',
+              style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.w700,
+                color: Colors.grey,
+              ),
+            ),
+            Divider(),
+            FlatButton(
+              onPressed: () => _navigationService.navigateTo(HomeViewRoute),
+              child: Text('Click here to go to home page'),
+              color: Colors.blueGrey[100],
+            )
+          ],
         ),
       ),
     );

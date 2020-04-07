@@ -32,6 +32,7 @@ class _CheckListState extends State<CheckList> {
   Widget build(BuildContext context) {
     int val;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: buildAppBar(),

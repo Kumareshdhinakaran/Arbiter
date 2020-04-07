@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:udecor/locator.dart';
+import 'package:udecor/models/user.dart';
+import 'package:udecor/services/authentication_service.dart';
 import 'package:udecor/ui/widgets/appbar.dart';
 import 'package:udecor/ui/widgets/drawer_widget.dart';
 
 class ProfilePage extends StatelessWidget {
+  final AuthenticationService _authenticationService =
+      locator<AuthenticationService>();
   final addressController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: buildAppBar(),
         drawer: DrawerWidget(),
@@ -32,7 +38,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                     Column(
                       children: <Widget>[
-                        Text('John Prasad M'),
+                        Text(_authenticationService.currentUser.fullName),
                         Row(
                           children: <Widget>[
                             Icon(Icons.location_on),

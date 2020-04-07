@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:udecor/constants/route_names.dart';
-import 'package:udecor/locator.dart';
-import 'package:udecor/services/navigation_service.dart';
 
 AppBar buildAppBar() {
   return AppBar(

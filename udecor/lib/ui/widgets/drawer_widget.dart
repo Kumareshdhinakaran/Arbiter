@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:udecor/constants/route_names.dart';
 import 'package:udecor/locator.dart';
+import 'package:udecor/services/authentication_service.dart';
 import 'package:udecor/services/navigation_service.dart';
 
 class DrawerWidget extends StatelessWidget {
   final NavigationService _navigationService = locator<NavigationService>();
-
+  final AuthenticationService _authenticationService =
+      locator<AuthenticationService>();
   DrawerWidget({
     Key key,
   }) : super(key: key);
@@ -38,44 +40,194 @@ class DrawerWidget extends StatelessWidget {
             Expanded(
               child: ListView(
                 children: [
-                  ListTile(
-                    title: Text("Home"),
-                    onTap: () => _navigationService.navigateTo(HomeViewRoute),
-                  ),
-                  ListTile(
-                    title: Text("My orders"),
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                  ListTile(
-                    title: Text("Checklist"),
-                    onTap: () => _navigationService.navigateTo(CheckListRoute),
-                  ),
-                  ListTile(
-                    title: Text("Settings"),
-                    onTap: () {
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                  Divider(
-                    color: Colors.black,
-                  ),
-                  ListTile(
-                    title: Text("My profile"),
-                    onTap: () =>
-                        _navigationService.navigateTo(ProfilePageRoute),
-                  ),
-                  ListTile(
-                    title: Text("logout"),
-                    onTap: () => _navigationService.navigateTo(LoginViewRoute),
-                  ),
+                  _authenticationService.currentUser.userRole != 'Admin'
+                      ? Column(
+                          children: <Widget>[
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(Icons.home),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: ListTile(
+                                    title: Text("Home"),
+                                    onTap: () => _navigationService
+                                        .navigateTo(HomeViewRoute),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.shopping_cart,
+                                ),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: ListTile(
+                                    title: Text("My Orders"),
+                                    onTap: () {},
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.event_note,
+                                ),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: ListTile(
+                                    title: Text("Checklist"),
+                                    onTap: () => _navigationService
+                                        .navigateTo(CheckListRoute),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.settings,
+                                ),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: ListTile(
+                                    title: Text("settings"),
+                                    onTap: () {},
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Divider(
+                              color: Colors.black,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.person_outline,
+                                ),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: ListTile(
+                                    title: Text("My profile"),
+                                    onTap: () => _navigationService
+                                        .navigateTo(ProfilePageRoute),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.exit_to_app,
+                                ),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: ListTile(
+                                    title: Text("logout"),
+                                    onTap: () => _navigationService
+                                        .navigateTo(LoginViewRoute),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        )
+                      : Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(Icons.home),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: ListTile(
+                                    title: Text("Home"),
+                                    onTap: () => _navigationService
+                                        .navigateTo(HomeViewRoute),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.person_outline,
+                                ),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: ListTile(
+                                    title: Text("My profile"),
+                                    onTap: () => _navigationService
+                                        .navigateTo(ProfilePageRoute),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.add_box,
+                                ),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: ListTile(
+                                    title: Text("Add Items"),
+                                    onTap: () => _navigationService
+                                        .navigateTo(ProductsViewRoute),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.2,
+                            ),
+                            Divider(),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Icon(
+                                  Icons.exit_to_app,
+                                ),
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.7,
+                                  child: ListTile(
+                                    title: Text("logout"),
+                                    onTap: () => _navigationService
+                                        .navigateTo(LoginViewRoute),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                 ],
               ),
             ),
           ],
         ),
       ),
+      elevation: 5,
     );
   }
 }

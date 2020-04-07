@@ -36,7 +36,7 @@ class SignUpViewModel extends BaseModel {
     setBusy(false);
     if (result is bool) {
       if (result) {
-        _navigationService.navigateTo(HomeViewRoute);
+        _navigationService.navigateTo(LoginViewRoute);
       } else {
         await _dialogService.showDialog(
           title: 'Sign Up Failure',

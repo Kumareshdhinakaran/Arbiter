@@ -2,4 +2,4 @@
 
 First Initiative 
 
-![Farmers Market Finder Demo](demo/appdemo.gif)
+![Farmers Market Finder Demo](demo/appdemo1.gif)

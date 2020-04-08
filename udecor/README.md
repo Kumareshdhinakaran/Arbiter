@@ -1,8 +1,7 @@
 # **Online application for local shopping**
 
 ## Description
-
-    The main reason of people coming out of house during lockdown is to buy essentials.if we have a mobile application to buy essential from the local store which can be delivered home by the seller can reduce the spread of Coronavirus and our economy will be maintained in a optimum level.this application have a list of products available at a particular seller, number of units and price details.the buyer platform have the options to buy products.this application contains location filter which enables to buy products from nearby stores. Main idea of this application is to help people to buy essential, reduce spread of covid-19 and maintain better economy level.
+The main reason of people coming out of house during lockdown is to buy essentials.if we have a mobile application to buy essential from the local store which can be delivered home by the seller can reduce the spread of Coronavirus and our economy will be maintained in a optimum level.this application have a list of products available at a particular seller, number of units and price details.the buyer platform have the options to buy products.this application contains location filter which enables to buy products from nearby stores. Main idea of this application is to help people to buy essential, reduce spread of covid-19 and maintain better economy level.
 
 ## Hardware: 
 

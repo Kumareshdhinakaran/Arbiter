@@ -23,7 +23,7 @@
 
 ## Process flow diagram
 
-        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/processflow.jpg "Process")
+![](images/processflow.png)
 
 ## Data Flow Diagram
 

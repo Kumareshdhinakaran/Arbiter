@@ -23,21 +23,20 @@
 
 ## Process flow diagram
 
-![](images/processflow.png)
+![](images/processflow.jpg)
 
 ## Data Flow Diagram
 
     Level Zero diagram
-
-        ![level zero diagram](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/levelzero1.jpg )
+   ![level zero diagram](images/levelzero1.jpg )
 
 
     Level One diagram
-        ![level one diagram](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/levelone.jpg "Title1")
+   ![level one diagram](images/levelone.png)
 
 
     Level Two diagram
-        ![level two diagram](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/leveltwo.jpg "Title2")
+   ![level two diagram](images/leveltwo.jpg)
 
 Final Demo
 ![Farmers Market Finder Demo](demo/appdemo1.gif)

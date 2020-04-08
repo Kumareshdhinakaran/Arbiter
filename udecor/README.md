@@ -1,4 +1,4 @@
-**# Online application for local shopping**
+# **Online application for local shopping**
 
 ## Description
 
@@ -23,20 +23,20 @@
 
 ## Process flow diagram
 
-        ![Image](images/processflow.jpg)
+        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/processflow.jpg)
 
 ## Data Flow Diagram
 
-    __Level Zero diagram__
-        ![Image](images/levelzero1.jpg)
+    Level Zero diagram__
+        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/levelzero1.jpg)
 
 
     __Level One diagram__
-        ![Image](images/levelone.jpg)
+        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/levelone.jpg)
 
 
     __Level Two diagram__
-        ![Image](images/leveltwo.jpg)
+        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/leveltwo.jpg)
 
 Final Demo
 ![Farmers Market Finder Demo](demo/appdemo1.gif)

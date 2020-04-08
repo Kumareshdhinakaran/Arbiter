@@ -23,20 +23,20 @@
 
 ## Process flow diagram
 
-        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/processflow.jpg)
+        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/processflow.jpg "Process")
 
 ## Data Flow Diagram
 
     **Level Zero diagram**
-        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/levelzero1.jpg)
+        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/levelzero1.jpg "Title0")
 
 
     **Level One diagram**
-        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/levelone.jpg)
+        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/levelone.jpg "Title1")
 
 
     **Level Two diagram**
-        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/leveltwo.jpg)
+        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/leveltwo.jpg "Title2")
 
 Final Demo
 ![Farmers Market Finder Demo](demo/appdemo1.gif)

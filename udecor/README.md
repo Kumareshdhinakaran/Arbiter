@@ -27,16 +27,17 @@
 
 ## Data Flow Diagram
 
-    **Level Zero diagram**
-        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/levelzero1.jpg "Title0")
+    Level Zero diagram
+
+        ![level zero diagram](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/levelzero1.jpg )
 
 
-    **Level One diagram**
-        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/levelone.jpg "Title1")
+    Level One diagram
+        ![level one diagram](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/levelone.jpg "Title1")
 
 
-    **Level Two diagram**
-        ![alt text](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/leveltwo.jpg "Title2")
+    Level Two diagram
+        ![level two diagram](https://github.com/Kumareshdhinakaran/e-commerce/blob/master/udecor/images/leveltwo.jpg "Title2")
 
 Final Demo
 ![Farmers Market Finder Demo](demo/appdemo1.gif)
